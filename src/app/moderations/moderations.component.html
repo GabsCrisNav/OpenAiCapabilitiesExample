@@ -1,0 +1,20 @@
+<div>
+    <Head>
+        <title>OpenAI Quickstart</title>
+        <link rel="icon" href="/dog.png"/>
+    </Head>
+
+    <main class="main">
+        <h3>Moderations on the text</h3>
+        <form>
+            <input
+                type="text"
+                name="texttoedit"
+                placeholder="Enter a phrase"
+                [(ngModel)] = 'phrase'
+            />
+            <input type="button" value="Send" (click)="postCompletition()" />
+        </form>
+        <div class="result">{{result | json}}</div>
+    </main>
+</div>
