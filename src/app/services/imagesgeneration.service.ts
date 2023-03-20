@@ -15,7 +15,7 @@ export class ImagesgenerationService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + process.env.NG_APP_ENV,
+      'Authorization': 'Bearer ' + process.env['NG_APP_ENV'],
     })
   }
 
@@ -32,6 +32,7 @@ export class ImagesgenerationService {
     if(error.error instanceof ErrorEvent) {
       // Get client-side error
       errorMessage = error.error.message;
+      console.log(process.env.NG_APP_ENV)
     } else {
       // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
